@@ -48,7 +48,7 @@
 				},
 				toolbar: {
 					items: [
-						'ckfinder', 'uploadImage' '|',
+						'ckfinder', 'uploadImage', '|',
 						'heading', '|',
 						'alignment', '|',
 						'bold', 'italic', 'strikethrough', 'underline', 'subscript', 'superscript', '|',
