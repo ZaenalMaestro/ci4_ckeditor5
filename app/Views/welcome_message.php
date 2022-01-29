@@ -48,7 +48,7 @@
 				},
 				toolbar: {
 					items: [
-						'ckfinder', '|',
+						'ckfinder', 'uploadImage' '|',
 						'heading', '|',
 						'alignment', '|',
 						'bold', 'italic', 'strikethrough', 'underline', 'subscript', 'superscript', '|',
@@ -58,7 +58,7 @@
 						'code', 'codeBlock', '|',
 						'insertTable', '|',
 						'outdent', 'indent', '|',
-						'uploadImage', 'blockQuote', '|',
+						, 'blockQuote', '|',
 						'undo', 'redo'
 					],
 					shouldNotGroupWhenFull: true
