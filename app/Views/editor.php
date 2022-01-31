@@ -11,7 +11,7 @@
 <body>
 	<div class="container">
 		<h1 class="title">Document editor</h1>
-
+		<input type="text" class="judul" id="judul" placeholder="Input Judul Konten...">
 		<!-- The toolbar will be rendered in this container. -->
 		<div id="toolbar-container" class="toolbar-container"></div>
 
@@ -21,10 +21,15 @@
 
 			</div>
 		</div>
+
+		<!-- button -->		
+		<button class="button" id="button-save">Save</button>
 	</div>
 
 	<script src="<?= base_url('/ckfinder/ckfinder.js') ?>"></script>
+	<script src="<?= base_url('/js/insert-data.js') ?>"></script>
 	<script>
+		let konten
 		DecoupledEditor
 			.create(document.querySelector('#editor'), {
 				fontSize: {
@@ -66,6 +71,7 @@
 
 			})
 			.then(editor => {
+				konten = editor;
 				const toolbarContainer = document.querySelector('#toolbar-container');
 
 				toolbarContainer.appendChild(editor.ui.view.toolbar.element);
@@ -73,6 +79,20 @@
 			.catch(error => {
 				console.error(error);
 			});
+
+		// send data to server
+		const buttonSave = document.getElementById('button-save')
+		buttonSave.addEventListener('click', () => {
+			const judul = document.getElementById('judul')
+
+			const data = {
+				'judul': judul.value,
+				'konten': konten.getData()
+			}
+
+			insert(data);
+		})
+
 	</script>
 </body>
 
